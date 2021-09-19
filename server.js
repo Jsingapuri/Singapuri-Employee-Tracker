@@ -1,10 +1,10 @@
 const inquirer = require("inquirer");
 const connection = require("./config/connection");
-// const Sequelize = require('sequelize');
+const mysql = require("mysql2");
+const Sequelize = require('sequelize');
 
 require("dotenv").config();
 require("console.table");
-const PORT = process.env.PORT || 3000;
 
 const askQuestion = () => {
   inquirer
@@ -84,7 +84,7 @@ const viewRoles = () => {
   });
 };
 
-//left off here
+
 const addDepartment = () => {
   inquirer
     .prompt([
@@ -107,7 +107,7 @@ const addDepartment = () => {
       );
     });
 };
-// role is currently not being added to the role set
+
 const addRole = () => {
   inquirer
     .prompt([
@@ -118,7 +118,7 @@ const addRole = () => {
       },
       {
         type: "input",
-        name: "slaray",
+        name: "salary",
         message: "What is the role's salary?",
       },
       {
@@ -129,15 +129,14 @@ const addRole = () => {
     ])
     .then((answers) => {
       connection.query(
-        `INSERT INTO role SET ?`,
-        [answers],
+        `INSERT INTO role SET ?`, 
+        [answers], 
         (err, results) => {
-          //   if (err) throw err;
-          console.log(results);
-          console.table(results);
-          askQuestion();
-        }
-      );
+        //   if (err) throw err;
+
+        console.table(results);
+        askQuestion();
+      });
     });
 };
 // employee issues
@@ -171,7 +170,7 @@ const addEmployee = () => {
         [answers],
         (err, results) => {
           //   if (err) throw err;
-          console.log(results);
+
           console.table(results);
           askQuestion();
         }
@@ -207,4 +206,11 @@ const updateEmployeeRole = () => {
     });
 };
 
+
+
+const quit = () => process.exit();
+  
+
 askQuestion();
+
+
