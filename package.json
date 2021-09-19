@@ -1,0 +1,28 @@
+{
+  "name": "Singapuri-Employee-Tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jsingapuri/Singapuri-Employee-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jsingapuri/Singapuri-Employee-Tracker/issues"
+  },
+  "homepage": "https://github.com/Jsingapuri/Singapuri-Employee-Tracker#readme",
+  "dependencies": {
+    "connection": "^1.4.0",
+    "console.table": "^0.10.0",
+    "dotenv": "^10.0.0",
+    "inquirer": "^8.1.5",
+    "mysql2": "^2.3.0",
+    "sequelize": "^6.6.5"
+  }
+}
